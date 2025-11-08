@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AIDEX — Smart First Aid Box (Pro)</title>
+  <meta name="description" content="AIDEX — smart first aid box demo with AI guidance, inventory tracking, vitals monitoring.">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container fade-in">
+    <header class="header">
+      <div class="brand">
+        <img src="logo.svg" alt="AIDEX logo" class="logo">
+        <div>
+          <h1 class="title">AIDEX</h1>
+          <div class="lead">Smart First Aid Box — intelligent kit with AI assistance</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="btn" id="ctaDemo">View Demo</button>
+        <button class="btn secondary" id="downloadZip">Download</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="card diagram-card fade-in" style="animation-delay:120ms">
+        <div class="controls">
+          <div>
+            <strong>Interactive Diagram</strong>
+            <div style="font-size:12px;color:var(--muted)">Click hotspots to explore AIDEX zones</div>
+          </div>
+          <div class="group">
+            <button class="btn secondary" id="zoomOut">-</button>
+            <div id="zoomPercent">100%</div>
+            <button class="btn secondary" id="zoomIn">+</button>
+          </div>
+        </div>
+
+        <div class="diagram-stage" id="diagramStage">
+          <img id="diagramImg" src="aidex-diagram.svg" alt="AIDEX Diagram">
+          <button class="hotspot pulse" data-id="bandage" style="left:12%; top:18%"><div class="dot"></div><div style="font-weight:700">Bandage</div></button>
+          <button class="hotspot pulse" data-id="medicine" style="left:12%; top:38%"><div class="dot"></div><div style="font-weight:700">Medicine</div></button>
+          <button class="hotspot" data-id="tools" style="left:72%; top:20%"><div class="dot"></div><div style="font-weight:700">Tools</div></button>
+          <button class="hotspot" data-id="vitals" style="left:68%; top:62%"><div class="dot"></div><div style="font-weight:700">Vitals</div></button>
+          <button class="hotspot" data-id="power" style="left:24%; top:72%"><div class="dot"></div><div style="font-weight:700">Power</div></button>
+          <button class="hotspot" data-id="ai" style="left:56%; top:78%"><div class="dot"></div><div style="font-weight:700">AI Hub</div></button>
+
+          <div class="info-box" id="infoBox"></div>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:12px;align-items:center">
+          <button class="btn" id="simulateCall">Simulate Emergency</button>
+          <button class="btn secondary" id="inventoryBtn">Inventory Check</button>
+          <button class="btn secondary" id="downloadBOM">BOM</button>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card fade-in" style="animation-delay:200ms">
+          <h3 style="margin:0">Product Summary</h3>
+          <p style="margin:6px 0 0;color:var(--muted);font-size:13px">A compact, AI-enabled first aid kit with guided assistance, inventory tracking and emergency alerts.</p>
+
+          <div class="feature-list" style="margin-top:12px">
+            <div class="feature"><strong>AI Voice</strong><div style="font-size:12px;color:var(--muted)">Step guidance</div></div>
+            <div class="feature"><strong>Inventory</strong><div style="font-size:12px;color:var(--muted)">RFID + weight sensors</div></div>
+            <div class="feature"><strong>Vitals</strong><div style="font-size:12px;color:var(--muted)">HR + SpO₂ check</div></div>
+            <div class="feature"><strong>Power</strong><div style="font-size:12px;color:var(--muted)">Battery + solar</div></div>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <button class="btn" id="downloadBOM2">Download BOM</button>
+            <button class="btn secondary" id="readMore">Read More</button>
+          </div>
+        </div>
+
+        <div class="card fade-in" style="animation-delay:260ms">
+          <h4 style="margin:0">Presentation Tips</h4>
+          <ol style="margin:8px 0 0 18px;color:var(--muted);font-size:13px">
+            <li>Start with a short accident story.</li>
+            <li>Quickly demo hotspots and AI voice script.</li>
+            <li>Show BOM and manufacturing ask.</li>
+          </ol>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      Designed by Rishaan — Innovating for Safety • AIDEX © <span id="year"></span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
